@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      /* Center the header */
+#MHT {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Center the image */
+.center {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Add some padding to the body */
+body {
+    padding: 20px;
+}
+/* Customize the background color of the navigation bar */
+.navbar {
+    background-color: #f8f9fa; /* Light gray background color */
+}
+
+/* Customize the text color of the links in the navigation bar */
+.navbar-nav .nav-link {
+    color: #333; /* Dark gray text color */
+}
+
+/* Customize the active link color */
+.navbar-nav .nav-item.active .nav-link {
+    color: #007bff; /* Blue active link color */
+}
+
+/* Customize the button color in the search form */
+.form-inline .btn {
+    background-color: #007bff; /* Blue button background color */
+    color: #fff; /* White button text color */
+}
+
+/* Customize the button color on hover in the search form */
+.form-inline .btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+      body{
+        background: rgb(9,36,0);
+background: linear-gradient(90deg, rgba(9,36,0,1) 0%, rgba(9,121,90,1) 35%, rgba(0,212,255,1) 100%);
+      }
+      #MHT{
+       font-weight:500;
+       font-size: 50px;
+       text-align: center;
+       padding-top: 50px;
+      }
+      .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding-top: 100px;
+    }
+    #txt{
+      font-size: 30px;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: 300;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    </style>
+    <title>stress website</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/" style="color: darkcyan " id="txt">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../model.html" style="color: darkcyan " id="txt">Stress Reduction Predictor</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../remedy.html" style="color: darkcyan " id="txt">Remedies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://openai.com/blog/chatgpt" style="color: darkcyan " id="txt">Fact Checker</a>
+        </li>
+      </ul>
+      
+    </div>
+  </nav>
+
+  {% block body %}
+  
+  {% endblock  %}
+
+</body>
+</html>
+
+
+

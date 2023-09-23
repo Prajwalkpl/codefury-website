@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{%block body%}
+<style>
+    /* Reset some default browser styles */
+body, h1, form {
+margin: 0;
+padding: 0;
+}
+
+/* Set a background color for the body */
+body {
+background-color: #f0f0f0;
+font-family: Arial, sans-serif;
+}
+
+/* Style the heading */
+h1 {
+text-align: center;
+color: #fff;
+padding: 20px;
+margin-bottom: 20px;
+}
+
+/* Style the form */
+form {
+text-align: center;
+margin: 0 auto;
+width: 80%;
+max-width: 600px;
+padding: 50px;
+background-color: #fff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+}
+
+/* Style the label */
+label {
+
+font-weight: bold;
+}
+
+/* Style the textarea input */
+textarea {
+width: 100%;
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+resize: vertical;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+background-color: #333;
+color: #fff;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+/* Style the prediction result */
+#prediction_result {
+text-align: center;
+margin-top: 20px;
+padding: 10px;
+background-color: #f0f0f0;
+}
+body{
+    background: rgb(9,36,0);
+background: linear-gradient(90deg, rgba(9,36,0,1) 0%, rgba(9,121,90,1) 35%, rgba(0,212,255,1) 100%);
+  }
+</style>
+    <h1>Mental Health Prediction</h1>
+    <form method="POST" action="/predict">
+        <label for="input_text" id="ET">Enter Text:</label>
+        <textarea id="input_text" name="input_text" rows="4" cols="50"></textarea>
+        <br>
+        <input type="submit" value="Predict">
+    </form>
+        <div id="prediction_result"></div>
+        {% if pred %}
+        <div id="prediction_result">{{ pred }}</div>
+        {% endif %}
+
+{%endblock%}
