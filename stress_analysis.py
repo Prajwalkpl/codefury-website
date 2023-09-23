@@ -53,7 +53,7 @@ df3["text"] = df3["text"].apply(clean)
 
 df3["label"]=df["label"].map({0: "No Stress", 1: "Stress"})
 df3=df3[["text", "label"]]
-# print(df3.head())
+# print(df3[df3['label'])
 
 df3["sentiment"]=df3["text"].apply(detect_sentiment)
 # print(df3.head())
@@ -61,18 +61,28 @@ df3["sentiment"]=df3["text"].apply(detect_sentiment)
 x=df3.text
 y=df3.label
 
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.metrics import accuracy_score
+# from sklearn.metrics import accuracy_score
+# from sklearn.naive_bayes import MultinomialNB
+# mb=MultinomialNB()
 
 
 vect=CountVectorizer(stop_words="english")
 x=vect.fit_transform(x)
 x_train,x_test,y_train,y_test=train_test_split(x,y,random_state=42)
-mb=MultinomialNB()
 
-mb.fit(x_train,y_train)
+from sklearn.tree import DecisionTreeClassifier
+d=DecisionTreeClassifier()
+d.fit(x_train,y_train)
+
+# test1=d.predict(x_test)
+# user="im happy"
+# df2=vect.transform([user]).toarray()
+# output=d.predict(df2)
+# print(output)
+
+# mb.fit(x_train,y_train)
 # model=mb.fit(x_train,y_train).predict(x_test)
 # print(accuracy_score(model,y_test))
 
@@ -81,7 +91,5 @@ mb.fit(x_train,y_train)
 # output=mb.predict(df3)
 # print(output)
 
-pickle.dump(mb,open('model.pkl','wb'))
+pickle.dump(d,open('model.pkl','wb'))
 pickle.dump(vect,open('vectorizer.pkl','wb'))
-
-
